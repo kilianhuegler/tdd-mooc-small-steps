@@ -89,8 +89,7 @@ function createApp(database) {
       if (
         plainDate &&
         plainDate.equals(plainHoliday) &&
-        plainDate.month === plainHoliday.month &&
-        plainDate.day === plainHoliday.day
+        plainDate.month === plainHoliday.month
       ) {
         return true;
       }
