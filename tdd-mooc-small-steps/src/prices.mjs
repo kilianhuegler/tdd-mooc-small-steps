@@ -29,11 +29,11 @@ function createApp(database) {
     }
   }
 
-  function calculateCost(age, type, date, baseCost) {
+  function calculateCost(age, type, plainDate, baseCost) {
     if (type === "night") {
       return calculateCostForNightTicket(age, baseCost);
     } else {
-      return calculateCostForDayTicket(age, date ? date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : undefined, baseCost);
+      return calculateCostForDayTicket(age, plainDate ? plainDate.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : undefined, baseCost,);
     }
   }
 
