@@ -81,11 +81,11 @@ function createApp(database) {
   }
 
   function isHoliday(date) {
-    const plainDate = date ? date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : undefined;
+    const pd = date ? date.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : undefined;
     const holidays = database.getHolidays();
     for (let row of holidays) {
       let plainHoliday = Temporal.PlainDate.from(row.holiday);
-      if (plainDate && plainDate.equals(plainHoliday)) {
+      if (pd && pd.equals(plainHoliday)) {
         return true;
       }
     }
