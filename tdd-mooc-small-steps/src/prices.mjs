@@ -81,7 +81,6 @@ function createApp(database) {
   }
 
   function isHoliday(pd) {
-    //pd = pd ? pd.toTemporalInstant().toZonedDateTimeISO("UTC").toPlainDate() : undefined;
     const holidays = database.getHolidays();
     for (let row of holidays) {
       let plainHoliday = Temporal.PlainDate.from(row.holiday);
